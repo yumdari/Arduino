@@ -12,11 +12,11 @@
 #include <Adafruit_BME280.h>
 
 // Replace with your network credentials
-const char* ssid     = "yeomganae";
-const char* password = "65689497";
+const char* ssid     = "yummy2.4";
+const char* password = "kccikcci";
 
 // REPLACE with your Domain name and URL path or IP address with path
-const char* serverName = "http://192.168.0.2/post-esp-data.php";
+const char* serverName = "http://192.168.0.7/post-esp-data.php";
 
 // Keep this API Key value to be compatible with the PHP code provided in the project page. 
 // If you change the apiKeyValue value, the PHP file /post-esp-data.php also needs to have the same key 
@@ -52,7 +52,7 @@ void setup() {
 
   // (you can also pass in a Wire library object like &Wire2)
   bool status = bme.begin(0x76);
-  if (!status) {
+  if (status) {
     Serial.println("Could not find a valid BME280 sensor, check wiring or change I2C address!");
     while (1);
   }
