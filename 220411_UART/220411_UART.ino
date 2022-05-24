@@ -1,6 +1,8 @@
+#define LED 13
+
 void setup(){
   Serial.begin(9600);
-  pinMode(13, INPUT);
+  pinMode(LED, INPUT);
 }
 
 void loop(){
@@ -8,10 +10,10 @@ void loop(){
     int data = Serial.read();
     Serial.println(data); // echo
     if(data == '1')
-    digitalWrite(13, HIGH);
+    digitalWrite(LED, HIGH);
     delay(1000);
   }
   else
-  digitalWrite(13, LOW);
+  digitalWrite(LED, LOW);
   delay(1000);
 }
